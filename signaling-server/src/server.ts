@@ -13,7 +13,7 @@ const io = new Server(server, {
     origin: '*',
     methods: ['GET', 'POST']
   }
-});
+} as any);
 
 interface Room {
   pin: string;
