@@ -146,7 +146,7 @@ export class WebRTCManager {
   }
 
   private setupSignaling() {
-    this.socket.on('peer-joined', async ({ receiverSocketId }) => {
+    this.socket.on('peer-joined', async ({ receiverSocketId }: { receiverSocketId: string }) => {
       console.log('[Peer Joined] Target:', receiverSocketId);
       this.targetSocketId = receiverSocketId;
 
@@ -164,7 +164,7 @@ export class WebRTCManager {
       }
     });
 
-    this.socket.on('webrtc-signaling', async ({ senderSocketId, type, payload }) => {
+    this.socket.on('webrtc-signaling', async ({ senderSocketId, type, payload }: { senderSocketId: string; type: string; payload: any }) => {
       if (!this.targetSocketId) this.targetSocketId = senderSocketId;
 
       try {
