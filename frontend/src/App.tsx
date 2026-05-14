@@ -8,7 +8,7 @@ import { ReceiveCode } from './components/ReceiveCode';
 import { TransferProgress } from './components/TransferProgress';
 import { WebRTCManager, ProgressStats, TransferMetadata } from './lib/webrtc';
 
-const SIGNALING_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001' : `http://${window.location.hostname}:3001`;
+const SIGNALING_URL = 'https://skytransfer-signaling.onrender.com';
 
 const TRANSLATIONS = {
   en: {
